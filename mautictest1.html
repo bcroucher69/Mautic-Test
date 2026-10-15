@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mautic Functional Knowledge Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f3f4f6; 
+            color: #1f2937; 
+            margin: 0; 
+            padding: 40px 20px; 
+        }
+        .container { 
+            max-width: 750px; 
+            margin: auto; 
+            background: #ffffff; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+            overflow: hidden; 
+        }
+        .header { 
+            background-color: #2563eb; 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+        }
+        .header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+        .header p { margin: 10px 0 0; font-size: 14px; opacity: 0.9; }
+        form { padding: 30px; }
+        
+        .input-group { margin-bottom: 30px; }
+        .input-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 15px; }
+        .input-group input { 
+            width: 100%; padding: 12px 15px; box-sizing: border-box; 
+            border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; 
+            font-family: 'Inter', sans-serif; transition: border-color 0.2s;
+        }
+        .input-group input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+        
+        .question { margin-bottom: 30px; }
+        .question p { font-weight: 600; font-size: 16px; margin-bottom: 12px; line-height: 1.5; }
+        .options { list-style-type: none; padding: 0; margin: 0; }
+        .options li { margin-bottom: 10px; }
+        .options label { 
+            display: flex; align-items: flex-start; padding: 12px 15px; 
+            border: 1px solid #e5e7eb; border-radius: 8px; cursor: pointer; 
+            transition: all 0.2s; background: #f9fafb; font-size: 15px; line-height: 1.4;
+        }
+        .options label:hover { background: #f0fdf4; border-color: #bbf7d0; }
+        .options input[type="radio"] { margin-top: 3px; margin-right: 12px; cursor: pointer; }
+        
+        button { 
+            background-color: #2563eb; color: white; padding: 14px 24px; 
+            border: none; border-radius: 8px; cursor: pointer; font-size: 16px; 
+            font-weight: 600; width: 100%; transition: background-color 0.2s; 
+            font-family: 'Inter', sans-serif;
+        }
+        button:hover { background-color: #1d4ed8; }
+        button:disabled { background-color: #9ca3af; cursor: not-allowed; }
+        
+        #result { 
+            margin-top: 20px; font-weight: 600; font-size: 16px; 
+            text-align: center; padding: 15px; border-radius: 8px; 
+        }
+        .success-msg { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+        .error-msg { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Mautic Functional Knowledge Test</h1>
+            <p>Complete all 20 questions to test your proficiency.</p>
+        </div>
+        
+        <form id="testForm">
+            <div class="input-group">
+                <label for="userName">Full Name</label>
+                <input type="text" id="userName" name="userName" required placeholder="Enter your full name">
+            </div>
+
+            <div class="question">
+                <p>1. What is the primary purpose of the "Quick Add" feature?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q1" value="A" required> A) To import contacts from a CSV file.</label></li>
+                    <li><label><input type="radio" name="q1" value="B"> B) To offer the fastest and easiest way to enter a contact into the system with minimal information.</label></li>
+                    <li><label><input type="radio" name="q1" value="C"> C) To instantly add a contact to a dynamic segment.</label></li>
+                    <li><label><input type="radio" name="q1" value="D"> D) To categorize contacts using Tags.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>2. What is a key characteristic of a background import compared to a browser import?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q2" value="A" required> A) It restarts with each batch and requires an open browser.</label></li>
+                    <li><label><input type="radio" name="q2" value="B"> B) It is limited by strict timeouts.</label></li>
+                    <li><label><input type="radio" name="q2" value="C"> C) Mautic remembers the last successfully imported row and continues from there, making it faster and more reliable.</label></li>
+                    <li><label><input type="radio" name="q2" value="D"> D) The default batch size is 360 rows.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>3. What does the "Contact Owner" field define when setting up a contact?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q3" value="A" required> A) The user who manually added the contact.</label></li>
+                    <li><label><input type="radio" name="q3" value="B"> B) The sender information when sending promotional emails.</label></li>
+                    <li><label><input type="radio" name="q3" value="C"> C) The company the contact belongs to.</label></li>
+                    <li><label><input type="radio" name="q3" value="D"> D) The person managing the background import.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>4. How do Dynamic Segments differ from Static Segments?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q4" value="A" required> A) Contacts are added or removed manually in Dynamic Segments.</label></li>
+                    <li><label><input type="radio" name="q4" value="B"> B) Dynamic Segments are only used for exporting contacts.</label></li>
+                    <li><label><input type="radio" name="q4" value="C"> C) Contacts are automatically added or removed based on defined filters or conditions.</label></li>
+                    <li><label><input type="radio" name="q4" value="D"> D) Dynamic Segments cannot be used to trigger campaigns.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>5. What happens if a segment is configured with "Available in Preference Center: Yes"?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q5" value="A" required> A) Only the user who created the segment can see and use it.</label></li>
+                    <li><label><input type="radio" name="q5" value="B"> B) The segment will appear in the Preference Center so contacts can subscribe or unsubscribe.</label></li>
+                    <li><label><input type="radio" name="q5" value="C"> C) The segment is permanently hidden from all contacts.</label></li>
+                    <li><label><input type="radio" name="q5" value="D"> D) Contacts are automatically added to the Do Not Contact list.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>6. When creating an Asset, what is the "Alias" used for?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q6" value="A" required> A) To organize Assets into groups.</label></li>
+                    <li><label><input type="radio" name="q6" value="B"> B) To restrict the file size of the uploaded asset.</label></li>
+                    <li><label><input type="radio" name="q6" value="C"> C) To generate the slug for the download URL.</label></li>
+                    <li><label><input type="radio" name="q6" value="D"> D) To block search engines from indexing the file.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>7. What is a characteristic of a "Campaign Form"?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q7" value="A" required> A) It allows the execution of many submit actions immediately at the point of form submission.</label></li>
+                    <li><label><input type="radio" name="q7" value="B"> B) It has fewer actions directly associated with the form submit actions, as most actions trigger as part of a Campaign workflow.</label></li>
+                    <li><label><input type="radio" name="q7" value="C"> C) It cannot trigger a Campaign.</label></li>
+                    <li><label><input type="radio" name="q7" value="D"> D) It does not collect Contact information.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>8. What is the purpose of "Kiosk mode" in Forms?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q8" value="A" required> A) It sends a noindex HTTP header to prevent search engines from indexing the form.</label></li>
+                    <li><label><input type="radio" name="q8" value="B"> B) It applies styling from the selected Mautic Theme.</label></li>
+                    <li><label><input type="radio" name="q8" value="C"> C) It disables tracking of Contacts created via the form, storing no cookies or IP associations.</label></li>
+                    <li><label><input type="radio" name="q8" value="D"> D) It restricts form submissions to known contacts only.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>9. In form field configuration, what is the consequence of leaving a field unmapped in the "Contact Field" tab?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q9" value="A" required> A) The form will fail to submit.</label></li>
+                    <li><label><input type="radio" name="q9" value="B"> B) The submitted information will not appear in the Contact profile.</label></li>
+                    <li><label><input type="radio" name="q9" value="C"> C) The data is stored in the company record instead.</label></li>
+                    <li><label><input type="radio" name="q9" value="D"> D) It will automatically map to the Contact's Email address.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>10. What does the "Show after X submissions" behavior setting do in Forms?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q10" value="A" required> A) It limits the total number of times the entire form can be submitted.</label></li>
+                    <li><label><input type="radio" name="q10" value="B"> B) It displays certain fields only after the Contact has submitted the form a specific number of times.</label></li>
+                    <li><label><input type="radio" name="q10" value="C"> C) It auto-fills data after a set number of submissions.</label></li>
+                    <li><label><input type="radio" name="q10" value="D"> D) It deletes the contact if they submit the form too many times.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>11. Which form action allows providing an immediate file download after form submission?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q11" value="A" required> A) Post Results to Another Form</label></li>
+                    <li><label><input type="radio" name="q11" value="B"> B) Push Contact to Integration</label></li>
+                    <li><label><input type="radio" name="q11" value="C"> C) Download an Asset</label></li>
+                    <li><label><input type="radio" name="q11" value="D"> D) Send Form Results</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>12. How do "Segment Emails" differ from "Template Emails"?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q12" value="A" required> A) Segment emails are transactional and can be sent multiple times to the same contact.</label></li>
+                    <li><label><input type="radio" name="q12" value="B"> B) Segment emails are designed for marketing purposes and each contact can only get the segment email once.</label></li>
+                    <li><label><input type="radio" name="q12" value="C"> C) Segment emails are used exclusively for point triggers.</label></li>
+                    <li><label><input type="radio" name="q12" value="D"> D) Segment emails cannot be assigned to a specific category.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>13. What is the function of the "BCC Address" field when creating an email?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q13" value="A" required> A) It defines the email address that actually sends the email.</label></li>
+                    <li><label><input type="radio" name="q13" value="B"> B) It directs where replies should go.</label></li>
+                    <li><label><input type="radio" name="q13" value="C"> C) It secretly sends a copy of the email to other recipients without the main contact knowing.</label></li>
+                    <li><label><input type="radio" name="q13" value="D"> D) It specifies the contact segment that will receive the email.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>14. What are "Contact driven Campaigns"?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q14" value="A" required> A) Campaigns that trigger events after a delay of a predefined number of days.</label></li>
+                    <li><label><input type="radio" name="q14" value="B"> B) Campaigns that trigger events based on interactions with specific contacts, such as opening an email.</label></li>
+                    <li><label><input type="radio" name="q14" value="C"> C) Campaigns that only use time-driven actions.</label></li>
+                    <li><label><input type="radio" name="q14" value="D"> D) Campaigns that are strictly limited to SMS communication.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>15. In the Campaign Builder, what does a "Decision" represent?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q15" value="A" required> A) What you want Mautic to do, such as send an email.</label></li>
+                    <li><label><input type="radio" name="q15" value="B"> B) Rules based on contact data, like location or tags.</label></li>
+                    <li><label><input type="radio" name="q15" value="C"> C) How a contact responds to something, such as opening an email or clicking a link.</label></li>
+                    <li><label><input type="radio" name="q15" value="D"> D) The process of permanently deleting a contact.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>16. What does the "Red Path" indicate in a Campaign Decision?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q16" value="A" required> A) The contact took the expected action.</label></li>
+                    <li><label><input type="radio" name="q16" value="B"> B) The campaign has encountered a critical error.</label></li>
+                    <li><label><input type="radio" name="q16" value="C"> C) The contact did not take the expected action.</label></li>
+                    <li><label><input type="radio" name="q16" value="D"> D) The contact was successfully added to a segment.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>17. Under the Mautic "Components" menu, which of the following is considered an Asset?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q17" value="A" required> A) A Contact Record</label></li>
+                    <li><label><input type="radio" name="q17" value="B"> B) A PDF file, whitepaper, or eBook</label></li>
+                    <li><label><input type="radio" name="q17" value="C"> C) A Campaign Workflow</label></li>
+                    <li><label><input type="radio" name="q17" value="D"> D) A Segment</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>18. What action is taken by the "Add Do Not Contact" feature in a campaign?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q18" value="A" required> A) It permanently deletes the contact and all related data.</label></li>
+                    <li><label><input type="radio" name="q18" value="B"> B) It assigns the contact to a different Mautic user.</label></li>
+                    <li><label><input type="radio" name="q18" value="C"> C) It puts a contact on the Do Not Contact (DNC) list, stopping further communications.</label></li>
+                    <li><label><input type="radio" name="q18" value="D"> D) It removes the contact from specific segments.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>19. What are the two types of emails offered in Mautic?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q19" value="A" required> A) Static Emails and Dynamic Emails</label></li>
+                    <li><label><input type="radio" name="q19" value="B"> B) Template Emails and Segment Emails</label></li>
+                    <li><label><input type="radio" name="q19" value="C"> C) Form Emails and Action Emails</label></li>
+                    <li><label><input type="radio" name="q19" value="D"> D) Internal Emails and External Emails</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>20. What is required when importing a list of contacts outside of Mautic via CSV upload?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q20" value="A" required> A) Ensuring the file is in a UTF-8 CSV format and mapping the unique identifier.</label></li>
+                    <li><label><input type="radio" name="q20" value="B"> B) Adding the contacts to a Static Segment before uploading.</label></li>
+                    <li><label><input type="radio" name="q20" value="C"> C) Using the "Import in browser" option exclusively.</label></li>
+                    <li><label><input type="radio" name="q20" value="D"> D) Writing custom HTML code for the import.</label></li>
+                </ul>
+            </div>
+            
+            <button type="submit" id="submitBtn">Submit Test</button>
+            <div id="result"></div>
+        </form>
+    </div>
+
+    <script>
+        // LEAVE YOUR WEBHOOK EXACTLY AS IT WAS
+        const n8nWebhookUrl = 'https://sa1.altametrics.com/webhook/submit-test';
+
+        document.getElementById('testForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const resultDiv = document.getElementById('result');
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Grading...';
+            resultDiv.className = '';
+            resultDiv.innerText = '';
+
+            const formData = new FormData(this);
+            const answers = Object.fromEntries(formData.entries());
+
+            fetch(n8nWebhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(answers),
+            })
+            .then(response => response.json())
+            .then(data => {
+                submitBtn.innerText = 'Test Submitted';
+                resultDiv.className = 'success-msg';
+                if(data.score !== undefined) {
+                    resultDiv.innerHTML = `Success! Your score is ${data.score} / 20.`;
+                } else {
+                    resultDiv.innerHTML = `Test successfully submitted!`;
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Submit Test';
+                resultDiv.className = 'error-msg';
+                resultDiv.innerHTML = 'There was an error submitting the test. Please try again.';
+            });
+        });
+    </script>
+</body>
+</html>
